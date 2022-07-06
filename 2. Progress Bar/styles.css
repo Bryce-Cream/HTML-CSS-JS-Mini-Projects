@@ -3,6 +3,7 @@
 :root {
     --line-border-fill: #3498db;
     --line-border-empty: #e0e0e0;
+    --background-colour: lightblue;
 }
 
 
@@ -11,7 +12,7 @@
 }
 
 body{
-    background: lightblue;
+    background: var(--background-colour);
 
     font-family: 'Muli', sans-serif;
     display: flex;
@@ -26,16 +27,17 @@ body{
     text-align: center;
 }
 
-.progress-container {
+#progress-container {
     display: flex;
     justify-content: space-between;
     position: relative;
     margin-bottom: 30px;
     max-width: 100%;
-    width: 350px;
+    min-width: 0;
+    width: 500px;
 }
 
-.progress-container::before{
+#progress-container::before{
     /* When using ::before or after you need to set the content to see it */
     content: '';
     background-color:var(--line-border-empty);
@@ -100,4 +102,20 @@ body{
 .btn:disabled {
     background-color: var(--line-border-empty);
     cursor: not-allowed;
+}
+
+input{
+    font-family: inherit;
+    font-size: inherit;
+    background-color: var(--background-colour);
+    border: none;
+    width: 50px;
+
+    text-align: center;
+}
+
+input[type='number']::-webkit-inner-spin-button, 
+input[type='number']::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    margin: 0;
 }
