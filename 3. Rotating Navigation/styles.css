@@ -27,6 +27,12 @@ body{
     transform: rotate(-20deg);
 }
 
+.container.show-nav .circle
+{
+    transform: rotate(-70deg);
+}
+
+
 .circle-container
 {
     position: fixed;
@@ -46,6 +52,7 @@ body{
 
 .circle button
 {
+    cursor: pointer;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -73,7 +80,83 @@ body{
     transform-origin: top left;
 }
 
+.container.show-nav + nav li
+{
+    /* want to bring them into view */
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+
+/*----------LINKS / nav---------------*/
+nav
+{
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    z-index: 100;
+}
+
+nav ul
+{
+    list-style-type: none;
+    padding-left: 30px;
+}
+
+nav ul li
+{
+    text-transform: uppercase;
+    color: #fff;
+    margin: 40px 0;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in;
+}
+
+nav ul li i
+{
+    font-size: 20px;
+    margin-right:10px;
+}
+
+
+nav ul li + li /* + is the direct elements after, the children? */
+{
+    margin-left: 15px;
+    transform: translateX(-150%);
+}
+
+nav ul li + li + li /* + is the direct elements after, the children? */
+{
+    margin-left: 30px;
+    transform: translateX(-200%);
+}
+
+/*============CONTENT============= */
+
 .content img
 {
     max-width: 100%;
+}
+
+.content 
+{
+    max-width: 1000px;
+    margin: 50px auto; /* 50px top and bottom, auto left and right*/
+}
+
+.content h1
+{
+    margin: 0;
+}
+
+.content small 
+{
+    color: #555;
+    font-style: italic;
+}
+
+.content p
+{
+    color: #333;
+    line-height: 1.5;
 }
