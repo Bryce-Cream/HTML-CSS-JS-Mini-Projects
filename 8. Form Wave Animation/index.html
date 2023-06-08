@@ -6,11 +6,27 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="./styles.css">
-        <title>Project Title</title>
+        <title>Form Input Wave</title>
     </head>
     <body>
-        <h1>Name of Project</h1>
+        <div class="container">
+            <h1>Please Login</h1>
+            <form>
+                <div class="form-control">
+                    <input type="text" required>
+                    <label>Email</label>
+                </div>
 
+                <div class="form-control">
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+
+                <button class="btn">Login</button>
+
+                <p class="text">Don't have an account? <a href="#">Register</a></p>
+            </form>
+        </div>
         <script src="./script.js"></script>
     </body>
 </html>
