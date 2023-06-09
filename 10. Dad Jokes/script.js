@@ -1,6 +1,7 @@
 const jokeEl = document.getElementById('joke');
 const jokeBtn = document.getElementById('jokeBtn');
-
+const container = document.getElementById('container');
+var rotation = 360;
 
 jokeBtn.addEventListener('click', generateJoke);
 
@@ -10,7 +11,12 @@ generateJoke();
 //Make fetch request
 async function generateJoke()
 {
-    const config = {
+
+
+    container.style = `transform: rotateY(${rotation}deg`;
+    rotation += 360;
+
+      const config = {
         headers: {
             'Accept': 'application/json',
         },
@@ -18,7 +24,7 @@ async function generateJoke()
     
     const res = await fetch('https://icanhazdadjoke.com/', config);
     const data = await res.json();
-        
+
     jokeEl.innerHTML = data.joke
 }
 
